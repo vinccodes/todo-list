@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO HOME</title>
+</head>
+<body>
+    <h1>Homepage</h1>
+    
+    <ul class="todo-list">
+        <% todos.forEach(item =>{ %>
+            <li><%= item.name %> - <%= item.description %> <a href="/todo/<%= item.id %>/edit">Edit</a></li>
+        <% }) %>
+    </ul>
+
+    <a href="/todo/new">Add ToDo</a>
+</body>
+</html>
