@@ -11,7 +11,8 @@
     
     <ul class="todo-list">
         <% todos.forEach(item =>{ %>
-            <li><%= item.name %> - <%= item.description %> <a href="/todo/<%= item.id %>/edit">Edit</a></li>
+            <li><%= item.name %> - <%= item.description %> <a href="/todo/<%= item.id %>/edit">Edit</a> 
+                <a href="/todo/<%= item.id %>/delete">Delete</a></li>
         <% }) %>
     </ul>
 

@@ -76,7 +76,23 @@ app.put("/todo/:id/edit", async (req, res)=> {
 
 
 // DELETE
+app.get('/todo/:id/delete', async(req, res)=> {
+    const todo = await Todo.findById(req.params.id);
+    res.render('deleteTodo', { todo })
+})
 
+
+app.delete('/todo/:id/delete', async (req, res)=> {
+    try {
+        const todo = await Todo.findByIdAndDelete(req.params.id)
+        res.redirect('/')
+    }
+    catch(err) {
+        console.log("There was a problem with deleting Todo.");
+        console.err(err);
+    }
+    
+})
 
 
 app.listen(3000, ()=>{
