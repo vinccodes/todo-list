@@ -4,6 +4,7 @@ require('dotenv').config({ path: './config/config.env'});
 const path = require('path');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+const PORT = 3000;
 
 // Models
 const Todo = require('./models/todo');
@@ -95,6 +96,6 @@ app.delete('/todo/:id/delete', async (req, res)=> {
 })
 
 
-app.listen(3000, ()=>{
-    console.log("Server running on port 3000")
+app.listen(process.env.PORT || PORT, ()=>{
+    console.log(`Server running on port ${PORT}`)
 })
